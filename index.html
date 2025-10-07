@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Presentación profesional sobre incompatibilidades en el ejercicio de la abogacía">
+    <title>Incompatibilidades en el ejercicio de la abogacía</title>
+    
+    <!-- Referencia completa: CNDJ Rad. 110011102000201902462 01 (26-07-2023)
+         https://relatoria.cndj.gov.co/does_relatoria/F11001110200020190246201ADJUNTA20230726162123.pdf -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #0b2545;
+            --color-secondary: #2b2b2b;
+            --color-accent: #d4a853;
+            --color-bg-main: #1a3a5c;
+            --color-bg-light: #f5f5f5;
+            --color-white: #ffffff;
+            --color-text-dark: #333333;
+            --color-text-medium: #666666;
+            --font-serif: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-bg-main) 100%);
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .presentation-wrapper {
+            width: 90%;
+            max-width: 1200px;
+            height: 85vh;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .slide-content {
+            padding: 60px 80px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide h1 {
+            font-family: var(--font-serif);
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.2;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(-30px) scale(0.95);
+        }
+
+        .slide.active h1 {
+            animation: slideDownBounce 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        @keyframes slideDownBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+            }
+            70% {
+                transform: translateY(5px) scale(1.02);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .slide h2 {
+            font-family: var(--font-serif);
+            font-size: 54px;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--color-accent);
+            opacity: 0;
+            transform: translateX(-30px) rotateY(-15deg);
+        }
+
+        .slide.active h2 {
+            animation: slideRightFlip 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        @keyframes slideRightFlip {
+            0% {
+                opacity: 0;
+                transform: translateX(-30px) rotateY(-15deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) rotateY(0);
+            }
+        }
+
+        .content-list {
+            list-style: none;
+        }
+
+        .content-list li {
+            font-size: 30px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-50px) rotateX(20deg);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .content-list li:hover {
+            transform: translateX(5px);
+            color: var(--color-primary);
+        }
+
+        .slide.active .content-list li {
+            animation: slideInBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        .slide.active .content-list li:nth-child(1) { animation-delay: 0.1s; }
+        .slide.active .content-list li:nth-child(2) { animation-delay: 0.2s; }
+        .slide.active .content-list li:nth-child(3) { animation-delay: 0.3s; }
+        .slide.active .content-list li:nth-child(4) { animation-delay: 0.4s; }
+        .slide.active .content-list li:nth-child(5) { animation-delay: 0.5s; }
+        .slide.active .content-list li:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInBounce {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px) rotateX(20deg);
+            }
+            70% {
+                transform: translateX(3px) rotateX(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) rotateX(0);
+            }
+        }
+
+        .content-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(135deg, var(--color-accent), #f4c430);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.2), 0 0 15px rgba(212, 168, 83, 0.4);
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.2), 0 0 15px rgba(212, 168, 83, 0.4);
+            }
+            50% {
+                transform: scale(1.2);
+                box-shadow: 0 0 0 6px rgba(212, 168, 83, 0.1), 0 0 25px rgba(212, 168, 83, 0.6);
+            }
+        }
+
+        body.no-animations .slide,
+        body.no-animations .content-list li,
+        body.no-animations .balance-icon {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Portada */
+        .slide-cover {
+            text-align: center;
+            align-items: center;
+        }
+
+        .icon-container {
+            margin-bottom: 40px;
+        }
+
+        .balance-icon {
+            width: 120px;
+            height: 120px;
+            opacity: 0;
+            animation: fadeInIcon 1.2s ease forwards;
+        }
+
+        @keyframes fadeInIcon {
+            to { opacity: 1; }
+        }
+
+        .slide.active .balance-icon {
+            animation: fadeInIcon 1.2s ease forwards, balanceSwing 4s ease-in-out 1.2s infinite, iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes balanceSwing {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .authors {
+            font-size: 33px;
+            font-weight: 500;
+            color: var(--color-secondary);
+            margin-top: 80px;
+            opacity: 0;
+        }
+
+        .slide.active .authors {
+            animation: fadeIn 1s ease 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Elementos especiales */
+        .legal-quote {
+            background: linear-gradient(135deg, #f9f4e8, #ffffff);
+            border-left: 4px solid var(--color-accent);
+            padding: 24px;
+            margin: 24px 0;
+            font-style: italic;
+            font-size: 27px;
+            color: var(--color-secondary);
+            line-height: 1.6;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(-30px) rotateY(-10deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .legal-quote:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .slide.active .legal-quote {
+            animation: slideRightFlip 0.9s ease 0.3s forwards;
+        }
+
+        .subsection-title {
+            font-weight: 600;
+            font-size: 30px;
+            color: var(--color-primary);
+            margin-top: 24px;
+            margin-bottom: 16px;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .slide.active .subsection-title {
+            animation: fadeInUp 0.6s ease 0.4s forwards;
+        }
+
+        /* Slide final */
+        .slide-final {
+            justify-content: space-between;
+        }
+
+        .final-quote {
+            font-family: var(--font-serif);
+            font-size: 48px;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-primary);
+            text-align: center;
+            line-height: 1.5;
+            margin: 40px 0;
+            padding: 24px 0;
+            border-top: 2px solid var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+            opacity: 0;
+            transform: scale(0.9) rotateX(-15deg);
+        }
+
+        .slide.active .final-quote {
+            animation: zoomInRotate 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        @keyframes zoomInRotate {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) rotateX(-15deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotateX(0);
+            }
+        }
+
+        .references-section {
+            margin-top: 40px;
+            padding: 24px;
+            background: var(--color-bg-light);
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .slide.active .references-section {
+            animation: fadeInUp 0.8s ease 0.5s forwards;
+        }
+
+        .references-section h3 {
+            font-family: var(--font-serif);
+            font-size: 33px;
+            color: var(--color-primary);
+            margin-bottom: 16px;
+        }
+
+        .references-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .references-list li {
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            padding-left: 0;
+            color: var(--color-text-medium);
+        }
+
+        .references-list li::before {
+            display: none;
+        }
+
+        .reference-link a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid var(--color-accent);
+            transition: all 0.2s ease;
+        }
+
+        .reference-link a:hover {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-primary);
+        }
+
+        /* Controles */
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .control-btn {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 21px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .control-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .control-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .control-btn:hover {
+            background: var(--color-accent);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .control-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .control-btn:focus {
+            outline: 3px solid var(--color-accent);
+            outline-offset: 3px;
+        }
+
+        .control-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--color-secondary);
+            background: var(--color-white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .slide-counter:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal de notas */
+        .notes-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .notes-modal.active {
+            display: flex;
+        }
+
+        .notes-content {
+            background: var(--color-white);
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .notes-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .notes-header h3 {
+            font-family: var(--font-serif);
+            font-size: 39px;
+            color: var(--color-primary);
+            margin: 0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--color-text-medium);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--color-accent);
+            transform: rotate(90deg);
+        }
+
+        .notes-body {
+            font-size: 27px;
+            line-height: 1.7;
+            color: var(--color-text-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .presentation-wrapper {
+                width: 95%;
+                height: 90vh;
+            }
+
+            .slide-content {
+                padding: 50px 40px;
+            }
+
+            .slide h1 {
+                font-size: 60px;
+            }
+
+            .slide h2 {
+                font-size: 45px;
+            }
+
+            .content-list li {
+                font-size: 27px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+
+            .presentation-wrapper {
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+                border-radius: 0;
+            }
+
+            .slide-content {
+                padding: 30px 24px;
+                justify-content: flex-start;
+                padding-top: 60px;
+            }
+
+            .slide h1 {
+                font-size: 42px;
+                margin-bottom: 30px;
+            }
+
+            .slide h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .content-list li {
+                font-size: 24px;
+                padding-left: 28px;
+                margin-bottom: 16px;
+                line-height: 1.6;
+            }
+
+            .balance-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .authors {
+                font-size: 27px;
+                margin-top: 40px;
+            }
+
+            .legal-quote {
+                font-size: 24px;
+                padding: 18px;
+                margin: 20px 0;
+            }
+
+            .subsection-title {
+                font-size: 27px;
+            }
+
+            .final-quote {
+                font-size: 36px;
+                padding: 20px 0;
+                margin: 30px 0;
+            }
+
+            .references-section {
+                padding: 20px;
+                margin-top: 30px;
+            }
+
+            .references-section h3 {
+                font-size: 30px;
+            }
+
+            .references-list li {
+                font-size: 21px;
+            }
+
+            .controls {
+                bottom: 15px;
+                right: 15px;
+                gap: 6px;
+                flex-wrap: wrap;
+            }
+
+            .control-btn {
+                padding: 10px 16px;
+                font-size: 19px;
+            }
+
+            .slide-counter {
+                bottom: 15px;
+                left: 15px;
+                font-size: 21px;
+                padding: 8px 16px;
+            }
+
+            .notes-content {
+                width: 90%;
+                max-width: 90%;
+                padding: 24px;
+                margin: 20px;
+            }
+
+            .notes-header h3 {
+                font-size: 33px;
+            }
+
+            .notes-body {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide-content {
+                padding: 24px 16px;
+                padding-top: 50px;
+            }
+
+            .slide h1 {
+                font-size: 36px;
+                margin-bottom: 24px;
+            }
+
+            .slide h2 {
+                font-size: 30px;
+                margin-bottom: 16px;
+            }
+
+            .content-list li {
+                font-size: 21px;
+                padding-left: 24px;
+                margin-bottom: 14px;
+            }
+
+            .content-list li::before {
+                width: 8px;
+                height: 8px;
+                top: 8px;
+            }
+
+            .balance-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .authors {
+                font-size: 24px;
+                margin-top: 30px;
+            }
+
+            .legal-quote {
+                font-size: 21px;
+                padding: 14px;
+            }
+
+            .final-quote {
+                font-size: 30px;
+                padding: 16px 0;
+                margin: 20px 0;
+            }
+
+            .control-btn {
+                padding: 8px 12px;
+                font-size: 18px;
+            }
+
+            .slide-counter {
+                font-size: 18px;
+                padding: 6px 12px;
+            }
+
+            .notes-content {
+                padding: 20px;
+            }
+
+            .notes-header h3 {
+                font-size: 30px;
+            }
+
+            .close-btn {
+                font-size: 42px;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 600px) {
+            .presentation-wrapper {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .slide-content {
+                padding: 30px 40px;
+                justify-content: flex-start;
+            }
+
+            .controls {
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .slide-counter {
+                bottom: 10px;
+                left: 10px;
+            }
+        }
+
+        /* Impresión */
+        @media print {
+            body {
+                background: white;
+                overflow: visible;
+            }
+
+            .slide {
+                display: block !important;
+                opacity: 1 !important;
+                page-break-after: always;
+                position: relative !important;
+            }
+
+            .slide-content {
+                padding: 40px;
+            }
+
+            .content-list li {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .controls,
+            .slide-counter,
+            .notes-modal {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="presentation-wrapper">
+        <!-- Slide 1: Portada -->
+        <section class="slide active" id="slide-1" data-notes="Presentación inaugural sobre el marco normativo colombiano de incompatibilidades profesionales en la abogacía. Enfatizar la función pública de la profesión y su dimensión ética constitucional.">
+            <div class="slide-content slide-cover">
+                <div class="icon-container">
+                    <svg class="balance-icon" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="52" y="85" width="16" height="8" fill="#0b2545"/>
+                        <line x1="60" y1="25" x2="60" y2="85" stroke="#2b2b2b" stroke-width="2.5"/>
+                        <line x1="60" y1="30" x2="25" y2="42" stroke="#d4a853" stroke-width="2"/>
+                        <line x1="60" y1="30" x2="95" y2="42" stroke="#d4a853" stroke-width="2"/>
+                        <line x1="15" y1="42" x2="15" y2="55" stroke="#d4a853" stroke-width="1.5"/>
+                        <line x1="35" y1="42" x2="35" y2="55" stroke="#d4a853" stroke-width="1.5"/>
+                        <rect x="10" y="42" width="30" height="2" fill="#d4a853"/>
+                        <path d="M 10 55 L 15 65 L 35 65 L 40 55 Z" fill="#0b2545" opacity="0.7"/>
+                        <line x1="85" y1="42" x2="85" y2="55" stroke="#d4a853" stroke-width="1.5"/>
+                        <line x1="105" y1="42" x2="105" y2="55" stroke="#d4a853" stroke-width="1.5"/>
+                        <rect x="80" y="42" width="30" height="2" fill="#d4a853"/>
+                        <path d="M 80 55 L 85 65 L 105 65 L 110 55 Z" fill="#0b2545" opacity="0.7"/>
+                        <circle cx="60" cy="30" r="3" fill="#d4a853"/>
+                    </svg>
+                </div>
+                <h1>⚖️ Incompatibilidades en el ejercicio de la abogacía</h1>
+                <p class="authors">👥 Expositoras: Madeleyn Velásquez – Vanessa Martínez</p>
+            </div>
+        </section>
+
+        <!-- Slide 2 -->
+        <section class="slide" id="slide-2" data-notes="Base legal principal: Ley 1123 de 2007. Las incompatibilidades no son restricciones arbitrarias sino garantías sistémicas de transparencia. Enfatizar su naturaleza preventiva y protectora del interés público.">
+            <div class="slide-content">
+                <h2>🎯 Contexto general</h2>
+                <ul class="content-list">
+                    <li>⚖️ La abogacía como función social de carácter público.</li>
+                    <li>🔍 Exigencias: independencia, moralidad y transparencia.</li>
+                    <li>🚫 Incompatibilidades: límites impuestos para prevenir conflictos ético-funcionales.</li>
+                    <li>📜 Marco normativo: Ley 1123 de 2007, arts. 29 y 39.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 3 -->
+        <section class="slide" id="slide-3" data-notes="Arts. 123 y 95 de la Constitución Política establecen el fundamento del régimen de incompatibilidades. Protección de imparcialidad institucional y prevención de captura del interés público. Vínculo directo con principios de buen gobierno y probidad.">
+            <div class="slide-content">
+                <h2>📖 Fundamento constitucional y ético</h2>
+                <ul class="content-list">
+                    <li>🏛️ Art. 123 C.P.: ejercicio de funciones públicas en nombre del Estado.</li>
+                    <li>⚡ Art. 95 C.P.: principios de moralidad y solidaridad.</li>
+                    <li>🎯 Protección del principio de imparcialidad y la confianza legítima.</li>
+                    <li>🛡️ Evitar la captura del interés público por intereses particulares.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 4 -->
+        <section class="slide" id="slide-4" data-notes="Las incompatibilidades son instrumentos de preservación ética, no sanciones. Buscan prevenir conflictos antes que sancionarlos. Garantizan neutralidad profesional y autonomía del litigante frente a poderes institucionales.">
+            <div class="slide-content">
+                <h2>🎯 Finalidad de las incompatibilidades</h2>
+                <ul class="content-list">
+                    <li>🚦 Prevenir conflictos entre función pública y actividad privada.</li>
+                    <li>🔓 Preservar la autonomía y neutralidad del abogado.</li>
+                    <li>✨ Salvaguardar la dignidad profesional y la credibilidad institucional.</li>
+                    <li>💎 Garantizar la pureza ética del litigio.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 5 -->
+        <section class="slide" id="slide-5" data-notes="Texto literal del Art. 29, Ley 1123/2007. Enumerar con claridad los cinco grupos de sujetos incompatibles. Destacar la excepción: defensa propia o de familiares en primer grado de consanguinidad. Aplicación objetiva sin consideración de ánimo de lucro.">
+            <div class="slide-content">
+                <h2>📋 Art. 29 Ley 1123/2007 (extracto y sujetos)</h2>
+                <blockquote class="legal-quote">
+                    "No pueden ejercer la abogacía quienes desempeñen cargos públicos que impliquen dirección administrativa o funciones públicas…"
+                </blockquote>
+                <p class="subsection-title">👥 Sujetos incompatibles:</p>
+                <ul class="content-list">
+                    <li>👨‍💼 (i) servidores públicos (salvo defensa propia/familiar)</li>
+                    <li>👨‍⚖️ (ii) funcionarios judiciales y de control</li>
+                    <li>🪖 (iii) miembros activos de la Fuerza Pública</li>
+                    <li>👨‍🏫 (iv) docentes con dedicación exclusiva o cargos directivos</li>
+                    <li>⛔ (v) suspendidos o excluidos del ejercicio profesional.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 6 -->
+        <section class="slide" id="slide-6" data-notes="Naturaleza objetiva: no depende de forma contractual ni retribución económica. Vigencia: mientras persista la situación fáctica o jurídica generadora. Vulneración acarrea responsabilidad disciplinaria automática. Criterio funcional sobre criterio formal.">
+            <div class="slide-content">
+                <h2>💡 Doctrina y alcance</h2>
+                <ul class="content-list">
+                    <li>🛡️ Naturaleza preventiva — no sancionatoria.</li>
+                    <li>🔍 Se determina por la naturaleza de la función, no por la forma contractual o la retribución.</li>
+                    <li>⏰ Vigencia mientras persista la situación fáctica o jurídica que origina la incompatibilidad.</li>
+                    <li>⚠️ Vulneración → responsabilidad disciplinaria.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 7 -->
+        <section class="slide" id="slide-7" data-notes="Compatibilidad docencia-litigio: posible solo con cátedra parcial y sin funciones directivas. Incompatible si existe dedicación exclusiva o administración académica (rector, decano). Profesor de tiempo completo no puede litigar simultáneamente.">
+            <div class="slide-content">
+                <h2>👨‍🏫 Docencia y litigio</h2>
+                <ul class="content-list">
+                    <li>✅ Compatibilidad condicionada: solo tiempo parcial y sin funciones directivas.</li>
+                    <li>❌ Incompatibilidad si hay dedicación exclusiva o administración académica.</li>
+                    <li>⚖️ Principio clave: la docencia es compatible mientras no comprometa la independencia del abogado.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 8 -->
+        <section class="slide" id="slide-8" data-notes="Criterio funcional predomina sobre criterio formal. Evaluar incidencia del cargo en decisiones jurídicas. Ejemplos concretos: asesor jurídico de entidad pública no puede litigar contra ella; contratista con funciones legales tiene restricciones según objeto contractual.">
+            <div class="slide-content">
+                <h2>🏛️ Cargos públicos y litigio (criterio funcional)</h2>
+                <ul class="content-list">
+                    <li>🎯 Relevancia: grado de incidencia del cargo en decisiones jurídicas.</li>
+                    <li>📌 Ejemplos: asesor jurídico de entidad → incompatibilidad para litigar contra la entidad; contratista con funciones legales → limitaciones.</li>
+                    <li>⚖️ Finalidad: impedir la dualidad de lealtades.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 9 -->
+        <section class="slide" id="slide-9" data-notes="Caso emblemático del Consejo Nacional de Disciplina Judicial, 2023. Ejercicio simultáneo de cargo público y litigio privado. Aplicación estricta de arts. 29 y 39. Resultado: falta disciplinaria confirmada. Relevancia jurisprudencial: consolida interpretación objetiva de incompatibilidades.">
+            <div class="slide-content">
+                <h2>⚖️ CNDJ Rad. 110011102000201902462 01 (2023)</h2>
+                <ul class="content-list">
+                    <li>📅 Fecha: 26-07-2023. Ponente: Julio A. Sampedro Arrubla.</li>
+                    <li>📋 Hecho: ejercicio de la abogacía simultáneo con vínculo público.</li>
+                    <li>📜 Normas aplicadas: arts. 29 y 39 Ley 1123/2007.</li>
+                    <li>⚠️ Resultado: configuración de falta disciplinaria por incompatibilidad y ejercicio ilegal.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 10 -->
+        <section class="slide" id="slide-10" data-notes="Incompatibilidad opera ipso facto por el solo desempeño del cargo. Presunción de influencia institucional no requiere prueba de dolo ni lucro. Se valora potencialidad conflictiva, no materialización del perjuicio. Protege confianza ciudadana y probidad institucional.">
+            <div class="slide-content">
+                <h2>🔍 Razonamiento esencial del fallo</h2>
+                <ul class="content-list">
+                    <li>⚡ La incompatibilidad opera por el solo desempeño del cargo (presunción de influencia institucional).</li>
+                    <li>💭 No se exige prueba de beneficio económico ni dolo.</li>
+                    <li>🎯 Se valora la potencialidad de conflicto, no la materialización del perjuicio.</li>
+                    <li>🏛️ Repercusión: afectación de probidad y confianza pública.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 11 -->
+        <section class="slide" id="slide-11" data-notes="Art. 39 complementa al 29: tipifica ejercicio ilegal. Vulneración del art. 29 constituye ejercicio ilegal según art. 39. Sanciones escalonadas: desde suspensión temporal hasta exclusión definitiva del ejercicio profesional, según gravedad y reincidencia.">
+            <div class="slide-content">
+                <h2>⚠️ Art. 39 Ley 1123/2007 (ejercicio ilegal)</h2>
+                <ul class="content-list">
+                    <li>🚫 Tipifica: ejercicio de la abogacía por suspendidos, excluidos o inhabilitados.</li>
+                    <li>⚖️ Vulneración del art. 29 → ejercicio ilegal según art. 39.</li>
+                    <li>⚡ Sanciones: suspensión temporal hasta exclusión definitiva, según gravedad.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 12 -->
+        <section class="slide" id="slide-12" data-notes="Guía de actuación para profesionales. Auditoría previa antes de aceptar representación. Documentar abstenciones y recusas ante dudas razonables. Transparencia contractual y en manejo de información institucional. Implementación de buenas prácticas para prevención disciplinaria.">
+            <div class="slide-content">
+                <h2>✅ Criterios prácticos para profesionales</h2>
+                <ul class="content-list">
+                    <li>🔍 Verificar vínculo jurídico-fáctico antes de aceptar representación.</li>
+                    <li>⚠️ Evaluar conflicto potencial independientemente del lucro esperado.</li>
+                    <li>📝 Documentar recusos y abstenciones cuando existan dudas razonables.</li>
+                    <li>💎 Mantener transparencia en contratos y en el manejo de información institucional.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 13 -->
+        <section class="slide" id="slide-13" data-notes="Síntesis conceptual final. Las incompatibilidades no son formalidades vacías sino pilares de legitimidad profesional. Su acatamiento es defensa del sistema de justicia y garantía de confianza ciudadana. Ética profesional exige reconocimiento y respeto de límites funcionales.">
+            <div class="slide-content">
+                <h2>✨ Conclusiones</h2>
+                <ul class="content-list">
+                    <li>🏛️ Las incompatibilidades son garantías institucionales que consolidan la legitimidad profesional.</li>
+                    <li>⚠️ No son meros formalismos: su vulneración implica riesgo disciplinario.</li>
+                    <li>💎 La ética profesional exige reconocer y acatar límites funcionales.</li>
+                    <li>⚖️ Cumplirlas es defensa de la justicia y la confianza social.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 14 -->
+        <section class="slide" id="slide-14" data-notes="Cierre reflexivo y referencial. URL de la providencia CNDJ disponible para consulta. Invitar a preguntas, profundización y debate ético sobre casos límite.">
+            <div class="slide-content slide-final">
+                <blockquote class="final-quote">
+                    ✨ "El prestigio de la abogacía se sostiene en la integridad con que se ejerce." ⚖️
+                </blockquote>
+                
+                <div class="references-section">
+                    <h3>📚 Referencias</h3>
+                    <ul class="references-list">
+                        <li>📜 Ley 1123 de 2007, arts. 29 y 39.</li>
+                        <li>⚖️ CNDJ – Rad. 110011102000201902462 01 (26-07-2023), ponencia: Julio A. Sampedro Arrubla.</li>
+                        <li class="reference-link">
+                            <a href="https://relatoria.cndj.gov.co/does_relatoria/F11001110200020190246201ADJUNTA20230726162123.pdf" target="_blank" rel="noopener noreferrer">
+                                📄 Consultar providencia completa
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="controls">
+        <button id="btn-prev" class="control-btn">← Anterior</button>
+        <button id="btn-next" class="control-btn">Siguiente →</button>
+        <button id="btn-notes" class="control-btn">📝 Notas</button>
+    </nav>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">14</span>
+    </div>
+
+    <aside class="notes-modal" id="notes-modal">
+        <div class="notes-content">
+            <div class="notes-header">
+                <h3>Notas del Orador</h3>
+                <button class="close-btn" id="close-notes">&times;</button>
+            </div>
+            <div class="notes-body" id="notes-text"></div>
+        </div>
+    </aside>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        
+        // Actualizar contador de slides
+        document.getElementById('total-slides').textContent = totalSlides;
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            if (n > totalSlides) {
+                currentSlide = totalSlides;
+            }
+            if (n < 1) {
+                currentSlide = 1;
+            }
+            
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            slides[currentSlide - 1].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide;
+            
+            // Actualizar estado de botones
+            document.getElementById('btn-prev').disabled = currentSlide === 1;
+            document.getElementById('btn-next').disabled = currentSlide === totalSlides;
+        }
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+        
+        function showNotes() {
+            const slides = document.querySelectorAll('.slide');
+            const currentSlideElement = slides[currentSlide - 1];
+            const notes = currentSlideElement.getAttribute('data-notes') || 'No hay notas disponibles para esta diapositiva.';
+            
+            document.getElementById('notes-text').textContent = notes;
+            document.getElementById('notes-modal').classList.add('active');
+        }
+        
+        function closeNotes() {
+            document.getElementById('notes-modal').classList.remove('active');
+        }
+        
+        // Event listeners para botones
+        document.getElementById('btn-next').addEventListener('click', nextSlide);
+        document.getElementById('btn-prev').addEventListener('click', prevSlide);
+        document.getElementById('btn-notes').addEventListener('click', showNotes);
+        document.getElementById('close-notes').addEventListener('click', closeNotes);
+        
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('notes-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeNotes();
+            }
+        });
+        
+        // Navegación con teclado
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case 'ArrowRight':
+                case ' ':
+                    e.preventDefault();
+                    nextSlide();
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    prevSlide();
+                    break;
+                case 'Escape':
+                    closeNotes();
+                    break;
+                case 'n':
+                case 'N':
+                    showNotes();
+                    break;
+            }
+        });
+        
+        // Soporte para gestos táctiles en dispositivos móviles
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.querySelector('.presentation-wrapper').addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        document.querySelector('.presentation-wrapper').addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextSlide();
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                prevSlide();
+            }
+        }
+        
+        // Inicializar presentación
+        showSlide(1);
+    </script>
+</body>
+</html
